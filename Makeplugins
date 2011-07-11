@@ -1,0 +1,7 @@
+CFLAGS=-I. -Isrc -Ilibsao -Icommon -Iblock -Igui -fPIC
+LDFLAGS=--shared -rdynamic
+EXT_SRC=$(shell  for i in $(SRC); do echo $(DIR)/$$i; done;)
+
+"$(DIR)/lib$(NAME).so" : $(EXT_SRC)
+	$(CC) $(EXT_SRC) $(CFLAGS) -o "$(DIR)/lib$(NAME).so" $(LDFLAGS)
+    
