@@ -254,6 +254,10 @@ trainer_thread_entry (void *unused)
       }
       else
         DEBUG ("%s: coudln't retrieve form cache\n", names->strings_list[i]);
+        
+      /* Hang on, hang on. */
+      
+      sleep (1);
     }
     
     sleep_until_low_load ();

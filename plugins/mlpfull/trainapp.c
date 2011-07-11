@@ -295,7 +295,7 @@ main (int argc, char **argv)
   {
     NOTICE ("parsing files [%3d/%3d]... ", 
       i + 1, names->strings_count);
-    
+     
     if (ionogram_parse_filename (names->strings_list[i], &fn) == -1)
     {
       NOTICE ("%s: malformed filename, couldn't load\n", names->strings_list[i]);
@@ -329,6 +329,10 @@ main (int argc, char **argv)
     }
     else
       NOTICE ("%s: coudln't retrieve from cache\n", names->strings_list[i]);
+      
+    /* Hang on, man. This is NOT a botnet. */
+    
+    sleep (1);
   }
   
   NOTICE ("work done!\n");
